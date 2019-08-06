@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--
+        Guideline辅助线
+        Guideline可以用来辅助布局，通过Guideline能创建出一条条的水平线或者垂直线，
+        该线不会显示到界面上，但是能够利用这些线条来添加约束去完成界面的布局。
+        Guideline主要的属性有：
+
+            android:orientation="horizontal|vertical"
+            app:layout_constraintGuide_begin="30dp"
+            app:layout_constraintGuide_end="30dp"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation=”horizontal|vertical”表示是水平或垂直引导线。
+
+        app:layout_constraintGuide_begin=”30dp”，
+        如果是水平引导线，则距离布局顶部30dp，如果是垂直引导线，则距离布局左边30dp。
+
+        app:layout_constraintGuide_end=”30dp”，
+        如果是水平引导线，则距离布局底部30dp，如果是垂直引导线，则距离布局右边30dp。
+
+        app:layout_constraintGuide_percent=”0.5”，
+        如果是水平引导线，则距离布局顶部为整个布局高度的50%，如果是垂直引导线，则距离布局左边文这个布局宽度的50%。
+    -->
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="100dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="辅助线定位"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v"
+        app:layout_constraintTop_toTopOf="@id/guideline_h" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

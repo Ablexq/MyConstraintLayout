@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--
+    layout_constraintWidth_default有三个取值，作用如下：
+        spread，默认值，意思是占用所有的符合约束的空间
+        percent，意思是按照父布局的百分比设置,需要layout_constraintWidth_percent设置百分比例
+        wrap,意思匹配内容大小但不超过约束限制，注意和直接指定宽度为wrap_content的区别就是不超过约束限制，
+    -->
+
+    <!--
+         app:layout_constraintWidth_default="percent"
+         app:layout_constraintWidth_percent="0.4"
+     -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="percent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <!--
+        app:layout_constraintWidth_default="wrap"
+    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="wrap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="wrap" />
+
+    <!--
+        app:layout_constraintWidth_default="spread"
+    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="spread" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

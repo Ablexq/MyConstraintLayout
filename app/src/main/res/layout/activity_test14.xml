@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--
+        Guideline
+        主要用于辅助布局，即类似为辅助线，横向的、纵向的。该布局是不会显示到界面上的。
+        所以其有个属性为：
+        android:orientation取值为"vertical"和"horizontal".
+        除此以外，还差个属性，决定该辅助线的位置：
+        layout_constraintGuide_begin
+        layout_constraintGuide_end
+        layout_constraintGuide_percent
+        可以通过上面3个属性其中之一来确定属性值位置。
+        begin=30dp，即可认为距离顶部30dp的地方有个辅助线，根据orientation来决定是横向还是纵向。
+        end=30dp，即为距离底部。 percent=0.8即为距离顶部80%。
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="浮动按钮"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintRight_toLeftOf="@id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

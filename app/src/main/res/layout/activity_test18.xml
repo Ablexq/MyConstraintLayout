@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+        圆形布局 ：
+            layout_constraintCircle : 圆心，值是某个view的id
+            layout_constraintCircleRadius : 半径
+            layout_constraintCircleAngle ：角度，值是从0-360，0是指整上方
+    -->
+    <Button
+        android:id="@+id/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="圆心"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 正上方"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="100dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90 正右方"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="100dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="180 正下方"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="100dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="270 正左方"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="100dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
