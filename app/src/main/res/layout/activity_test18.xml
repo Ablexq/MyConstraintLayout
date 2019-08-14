@@ -14,9 +14,9 @@
     -->
     <Button
         android:id="@+id/a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
         android:text="圆心"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,39 +24,84 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
         android:text="0 正上方"
         app:layout_constraintCircle="@id/a"
         app:layout_constraintCircleAngle="0"
-        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleRadius="150dp"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
+        android:text="45"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
         android:text="90 正右方"
         app:layout_constraintCircle="@id/a"
         app:layout_constraintCircleAngle="90"
-        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleRadius="150dp"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
+        android:text="135"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
         android:text="180 正下方"
         app:layout_constraintCircle="@id/a"
         app:layout_constraintCircleAngle="180"
-        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleRadius="150dp"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
+        android:text="225"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
         android:text="270 正左方"
         app:layout_constraintCircle="@id/a"
         app:layout_constraintCircleAngle="270"
-        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleRadius="150dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle"
+        android:text="315"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="315"
+        app:layout_constraintCircleRadius="150dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

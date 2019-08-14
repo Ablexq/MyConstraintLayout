@@ -11,33 +11,6 @@
         android:orientation="vertical">
 
         <!--
-         app:layout_constraintHorizontal_bias="0.2"
-        -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="app:layout_constraintHorizontal_bias :  0.2"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp">
-
-            <Button
-                android:id="@+id/left0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="left0"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--
             默认chain
         -->
         <TextView
@@ -81,16 +54,15 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         <!--
-            app:layout_constraintHorizontal_chainStyle="spread"
+            中间设置 android:layout_marginLeft : 50dp
         -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="layout_constraintHorizontal_chainStyle : spread"
+            android:text="中间设置  android:layout_marginLeft : 50dp"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -104,7 +76,6 @@
                 android:layout_height="wrap_content"
                 android:text="left2"
                 app:layout_constraintEnd_toStartOf="@id/middle2"
-                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,6 +83,8 @@
                 android:id="@+id/middle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
                 android:text="middle2"
                 app:layout_constraintEnd_toStartOf="@id/right2"
                 app:layout_constraintStart_toEndOf="@+id/left2"
@@ -129,14 +102,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!--
-              app:layout_constraintHorizontal_chainStyle="spread_inside"
+                左边设置  gone
+                中间设置  android:layout_marginLeft : 50dp
         -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="layout_constraintHorizontal_chainStyle : spread_inside"
+            android:text="左边设置  gone \n 中间设置  android:layout_marginLeft : 50dp"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -149,8 +123,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="left3"
+                android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@id/middle3"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -158,6 +132,8 @@
                 android:id="@+id/middle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
                 android:text="middle3"
                 app:layout_constraintEnd_toStartOf="@id/right3"
                 app:layout_constraintStart_toEndOf="@+id/left3"
@@ -175,13 +151,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!--
-            app:layout_constraintHorizontal_chainStyle="packed"
+           左边设置 gone
+           中间设置 android:layout_goneMarginLeft : 50dp
+
+           当被约束的目标对象的可见性为View.GONE，
+           可以使用gone margin来设置，它只会在目标Target为GONE的时候生效。
         -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="layout_constraintHorizontal_chainStyle : packed"
+            android:text=" 左边设置 gone \n  中间设置 android:layout_goneMarginLeft : 50dp \n 使用gone margin来设置，它只会在目标Target为GONE的时候生效"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -194,8 +174,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="left4"
+                android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@id/middle4"
-                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -206,7 +186,9 @@
                 android:text="middle4"
                 app:layout_constraintEnd_toStartOf="@id/right4"
                 app:layout_constraintStart_toEndOf="@+id/left4"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginLeft="50dp"
+                app:layout_goneMarginStart="50dp" />
 
             <Button
                 android:id="@+id/right4"
@@ -215,103 +197,6 @@
                 android:text="right4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/middle4"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--
-            android:layout_width="0dp"
-            app:layout_constraintHorizontal_weight="1"
-        -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="weight chain"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
-
-            <Button
-                android:id="@+id/left5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="left5"
-                app:layout_constraintEnd_toStartOf="@id/middle5"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/middle5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="middle5"
-                app:layout_constraintEnd_toStartOf="@id/right5"
-                app:layout_constraintHorizontal_weight="2"
-                app:layout_constraintStart_toEndOf="@+id/left5"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/right5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="right5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toEndOf="@id/middle5"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <!--
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintHorizontal_chainStyle="packed"
-        -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="app:layout_constraintHorizontal_chainStyle : packed \n  app:layout_constraintHorizontal_bias :  0.2"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
-
-            <Button
-                android:id="@+id/left6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="left6"
-                app:layout_constraintEnd_toStartOf="@id/middle6"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/middle6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="middle6"
-                app:layout_constraintEnd_toStartOf="@id/right6"
-                app:layout_constraintStart_toEndOf="@+id/left6"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/right6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="right6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/middle6"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

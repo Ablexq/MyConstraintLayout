@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--
+            Group为ConstraintLayout布局中的子控件进行分组，可控制多个布局控件统一的可见性
+        -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Group为ConstraintLayout布局中的子控件进行分组，可控制多个布局控件统一的可见性"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="left1,middle1" />
+
+            <Button
+                android:id="@+id/left1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="left1"
+                app:layout_constraintEnd_toStartOf="@id/middle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/middle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="middle1"
+                app:layout_constraintEnd_toStartOf="@id/right1"
+                app:layout_constraintStart_toEndOf="@+id/left1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/right1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="right1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/middle1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--
+            Barrier
+            这里我们把左边区域中的姓名和联系方式用Barrier关联成一个整体。\n
+            而右侧的区域中的EditText分别关联约束这个Barrier整体。\n
+            当Barrier整体中的TextView的宽度发生改变时，\n
+            Barrier整体也是变化的，右侧的B区域的宽度也会随之改变。\n
+        -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Barrier\n 这里我们把左边区域中的姓名和联系方式用Barrier关联成一个整体。\n而右侧的区域中的EditText分别关联约束这个Barrier整体。\n 当Barrier整体中的TextView的宽度发生改变时，\nBarrier整体也是变化的，右侧的B区域的宽度也会随之改变。\n"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名："
+                app:layout_constraintBottom_toBottomOf="@+id/et_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_name" />
+
+            <TextView
+                android:id="@+id/tv_contract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="联系方式："
+                app:layout_constraintBottom_toBottomOf="@+id/et_contract"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_contract" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入姓名"
+                app:layout_constraintLeft_toLeftOf="@+id/barrier"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_contract"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入联系方式"
+                app:layout_constraintLeft_toLeftOf="@+id/barrier"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="right"
+                app:constraint_referenced_ids="tv_name,tv_contract" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
+

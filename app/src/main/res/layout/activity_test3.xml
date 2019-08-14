@@ -10,7 +10,7 @@
         android:id="@+id/btn_center"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:background="#00f00"
+        android:background="#00ff00"
         android:text="竖直参照物"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
